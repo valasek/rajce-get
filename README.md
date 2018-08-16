@@ -6,11 +6,13 @@
 [![PayPal Donate](https://img.shields.io/badge/donate-PayPal.me-ff69b4.svg)](https://paypal.me/StanislavValasek)
 
 
-<a href="http://flagpedia.net/the-czech-republic"><img alt="Flag of Czech Republic" src="//flagpedia.net/data/flags/mini/cz.png" width="30" height="20" /></a>
+<img src="http://flagpedia.net/data/flags/mini/cz.png" /> 
 
-<img src="https://github.com/hjnilsson/country-flags/blob/master/png100px/cz.png"/> Stahování alb z https://www.rajce.idnes.cz/
+Stahování alb z https://www.rajce.idnes.cz/
 
-<img src="http://flagpedia.net/data/flags/mini/us.png" /> Download albums from czech photo site https://www.rajce.idnes.cz/
+<img src="http://flagpedia.net/data/flags/mini/us.png" /> 
+
+Download albums from czech photo site https://www.rajce.idnes.cz/
 
 # Stáhnout program - Download
 * [rajce-get.exe](https://github.com/valasek/rajce-get/releases/download/v0.0.1/rajce-get.exe) (MS Windows 64bit)
@@ -18,7 +20,8 @@
 * [rajce-get.app](https://github.com/valasek/rajce-get/releases/download/v0.0.1/rajce-get.app.zip) (Mac OS X 64bit)
 
 # Použití - Usage
-(Česky)
+<img src="http://flagpedia.net/data/flags/mini/cz.png" /> 
+
 Ke stažení alba použijte příkaz
 ```
 rajce-get.exe <odkaz na album>
@@ -29,7 +32,8 @@ rajce.get.exe https://jaroslavtihlarik.rajce.idnes.cz/Zivocichove_a_rostliny_pov
 ```
 Fotky budou staženy do aktuálního adresáře.
 
-(Anglicky)
+<img src="http://flagpedia.net/data/flags/mini/us.png" /> 
+
 To download an album use the following command
 ```
 rajce-get.exe <link to album>
