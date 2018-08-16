@@ -40,7 +40,7 @@ rajce-get.exe <link to album>
 ```
 Example
 ```
-rajce.get.exe https://jaroslavtihlarik.rajce.idnes.cz/Zivocichove_a_rostliny_povodi_Moravy_10/
+rajce-get.exe https://jaroslavtihlarik.rajce.idnes.cz/Zivocichove_a_rostliny_povodi_Moravy_10/
 ```
 Pictures will be downloaded to current folder.
 
