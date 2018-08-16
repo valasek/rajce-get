@@ -1,4 +1,4 @@
-module github.com/valasek/rakce-get
+module github.com/valasek/rajce-get
 
 require (
 	github.com/PuerkitoBio/goquery v1.4.1
