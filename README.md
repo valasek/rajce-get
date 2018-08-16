@@ -3,7 +3,7 @@
 ![GitHub release](https://img.shields.io/github/release/valasek/rajce-get.svg)
 [![GitHub issues](https://img.shields.io/github/issues/valasek/rajce-get.svg)](https://github.com/valasek/rajce-get/issues)
 [![GitHub license](https://img.shields.io/github/license/valasek/rajce-get.svg)](https://github.com/valasek/rajce-get/blob/master/LICENSE)
-[![PayPal Donate](https://img.shields.io/badge/donate-PayPal.me-ff69b4.svg)](paypal.me/StanislavValasek)
+[![PayPal Donate](https://img.shields.io/badge/donate-PayPal.me-ff69b4.svg)](https://paypal.me/StanislavValasek)
 
 
 (Česky) Stahování alb z https://www.rajce.idnes.cz/
