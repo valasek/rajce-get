@@ -28,7 +28,7 @@ rajce-get.exe <odkaz na album>
 ```
 Příklad
 ```
-rajce.get.exe https://jaroslavtihlarik.rajce.idnes.cz/Zivocichove_a_rostliny_povodi_Moravy_10/
+rajce-get.exe https://jaroslavtihlarik.rajce.idnes.cz/Zivocichove_a_rostliny_povodi_Moravy_10/
 ```
 Fotky budou staženy do aktuálního adresáře.
 
