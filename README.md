@@ -1,16 +1,19 @@
 # Rajce Stahování Alb - Rajce Album Downloader
-<a href="https://github.com/valasek/rajce-get/blob/master/LICENSE"></a>
-<a href="https://github.com/valasek/rajce-get/releases"></a>
-<a href="https://github.com/valasek/rajce-get/issues"></a>
+
+![GitHub release](https://img.shields.io/github/release/valasek/rajce-get.svg)
+[![GitHub issues](https://img.shields.io/github/issues/valasek/rajce-get.svg)](https://github.com/valasek/rajce-get/issues)
+[![GitHub license](https://img.shields.io/github/license/valasek/rajce-get.svg)](https://github.com/valasek/rajce-get/blob/master/LICENSE)
+[![PayPal Donate](https://img.shields.io/badge/donate-PayPal.me-ff69b4.svg)](paypal.me/StanislavValasek)
+
 
 (Česky) Stahování alb z https://www.rajce.idnes.cz/
 
 (English) Download albums from czech photo site https://www.rajce.idnes.cz/
 
 # Stáhnout program - Download
-* rajce-get.exe (MS Windows 64bit)
-* rajce-get.bin (Linux 64bit)
-* rajce-get.bin (Mac OS X 64bit)
+* [rajce-get.exe](https://github.com/valasek/rajce-get/releases/download/v0.0.1/rajce-get.exe) (MS Windows 64bit)
+* [rajce-get.bin](https://github.com/valasek/rajce-get/releases/download/v0.0.1/rajce-get.bin) (Linux 64bit)
+* [rajce-get.app](https://github.com/valasek/rajce-get/releases/download/v0.0.1/rajce-get.app.zip) (Mac OS X 64bit)
 
 Ke stažení alba použijte příkaz
 ```
