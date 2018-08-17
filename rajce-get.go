@@ -40,13 +40,11 @@ func main() {
 		os.Exit(2)
 	}
 
-	downloaded := 0
 	doc.Find("a[href]").Each(func(index int, item *goquery.Selection) {
 		href, _ := item.Attr("href")
 		res := urlPattern.FindAllStringSubmatch(href, -1)
 		for i := range res {
 			URLs = append(URLs, remoteFile{url: res[i][1], file: res[i][2]})
-			downloaded++
 		}
 	})
 
@@ -55,11 +53,10 @@ func main() {
 		if err != nil {
 			fmt.Printf("Downloading failed (%s). Error: %v", remFile.file, remFile.url)
 		}
-		time.Sleep(1 * time.Second)
 		fmt.Printf("Dowloaded %d bytes (%s)\n", downloaded, remFile.file)
 	}
 
-	fmt.Printf("Finished, downloaded %d items", downloaded)
+	fmt.Printf("Finished, downloaded %d items", len(URLs))
 }
 
 func usage() {
@@ -68,7 +65,7 @@ func usage() {
 	os.Exit(2)
 }
 
-func downloadFile(filePath string, url string) (downloaded int64, error error) {
+func downloadFile(filePath string, url string) (int64, error) {
 
 	out, err := os.Create(filePath)
 
@@ -77,16 +74,14 @@ func downloadFile(filePath string, url string) (downloaded int64, error error) {
 	}
 	defer out.Close()
 
-	resp, err := http.Get(url)
+	var netClient = &http.Client{
+		Timeout: time.Second * 10,
+	}
+	resp, err := netClient.Get(url)
 	if err != nil {
 		return 0, err
 	}
 	defer resp.Body.Close()
 
-	n, err := io.Copy(out, resp.Body)
-	if err != nil {
-		return 0, err
-	}
-
-	return n, nil
+	return io.Copy(out, resp.Body)
 }
