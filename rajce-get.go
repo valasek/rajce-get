@@ -3,12 +3,13 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
 	"io"
 	"net/http"
 	"os"
 	"regexp"
 	"time"
+
+	"github.com/PuerkitoBio/goquery"
 )
 
 type remoteFile struct {
@@ -17,7 +18,7 @@ type remoteFile struct {
 }
 
 func main() {
-	fmt.Println("Starting ...")
+	fmt.Println("starting ...")
 	flag.Usage = usage
 	flag.Parse()
 
@@ -29,14 +30,14 @@ func main() {
 	//img31.rajce.idnes.cz/d3103/15/15400/15400849_2b8b5e522f4cde0cd7d89efe79cb0a63/images/MOV_0180.jpg
 	urlPattern, err := regexp.Compile(`(img[0-9]{2}.rajce.idnes.cz/.*/)(.*)`)
 	if err != nil {
-		fmt.Printf("There is a problem with your regexp.\n")
+		fmt.Printf("implementation error: regexp can not compile: %s\n", urlPattern.String())
 		os.Exit(2)
 	}
 
 	var URLs []remoteFile
 	doc, err := goquery.NewDocument(flag.Args()[0])
 	if err != nil {
-		fmt.Println("There is a problem getting a page.", err)
+		fmt.Printf("there is a problem getting a page %s: %s\n", flag.Args()[0], err)
 		os.Exit(2)
 	}
 
@@ -48,15 +49,19 @@ func main() {
 		}
 	})
 
+	var netClient = &http.Client{
+		Timeout: time.Second * 10,
+	}
 	for _, remFile := range URLs {
-		downloaded, err := downloadFile(remFile.file, "HTTPS://"+remFile.url+"/"+remFile.file)
+		downloaded, err := downloadFile(netClient, remFile.file, "HTTPS://"+remFile.url+"/"+remFile.file)
 		if err != nil {
-			fmt.Printf("Downloading failed (%s). Error: %v", remFile.file, remFile.url)
+			fmt.Printf("downloading of %s failed due to: %v\n", remFile.file, err)
+		} else {
+			fmt.Printf("%s dowloaded, %d bytes\n", remFile.file, downloaded)
 		}
-		fmt.Printf("Dowloaded %d bytes (%s)\n", downloaded, remFile.file)
 	}
 
-	fmt.Printf("Finished, downloaded %d items", len(URLs))
+	fmt.Printf("finished, downloaded %d items", len(URLs))
 }
 
 func usage() {
@@ -65,7 +70,7 @@ func usage() {
 	os.Exit(2)
 }
 
-func downloadFile(filePath string, url string) (int64, error) {
+func downloadFile(netClient *http.Client, filePath string, url string) (int64, error) {
 
 	out, err := os.Create(filePath)
 
@@ -74,14 +79,15 @@ func downloadFile(filePath string, url string) (int64, error) {
 	}
 	defer out.Close()
 
-	var netClient = &http.Client{
-		Timeout: time.Second * 10,
-	}
 	resp, err := netClient.Get(url)
 	if err != nil {
 		return 0, err
 	}
 	defer resp.Body.Close()
+	
+	if resp.StatusCode != http.StatusOK {
+		return 0, fmt.Errorf("get request to %s returned HTTP %d, expected HTTP %d", url, resp.StatusCode, http.StatusOK)
+	}
 
 	return io.Copy(out, resp.Body)
 }

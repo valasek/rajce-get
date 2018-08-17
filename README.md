@@ -15,9 +15,9 @@ Stahování alb z https://www.rajce.idnes.cz/
 Download albums from czech photo site https://www.rajce.idnes.cz/
 
 # Stáhnout program - Download
-* [rajce-get.exe](https://github.com/valasek/rajce-get/releases/download/v0.0.1/rajce-get.exe) (MS Windows 64bit)
-* [rajce-get.bin](https://github.com/valasek/rajce-get/releases/download/v0.0.1/rajce-get.bin) (Linux 64bit)
-* [rajce-get.app](https://github.com/valasek/rajce-get/releases/download/v0.0.1/rajce-get.app.zip) (Mac OS X 64bit)
+* [rajce-get.exe](https://github.com/valasek/rajce-get/releases/download/v0.0.2/rajce-get.exe) (MS Windows 64bit)
+* [rajce-get.bin](https://github.com/valasek/rajce-get/releases/download/v0.0.2/rajce-get.bin) (Linux 64bit)
+* [rajce-get.app](https://github.com/valasek/rajce-get/releases/download/v0.0.2/rajce-get.app.zip) (Mac OS X 64bit)
 
 # Použití - Usage
 <img src="http://flagpedia.net/data/flags/mini/cz.png" /> 
